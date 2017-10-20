@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Sportzilla</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}">
+    <script type="text/javascript" src="{% static 'js/wow.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <script src="{% static 'js/pleaserotate.min.js'%}"></script>
+    <script type="text/javascript">
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+<script>
+  var portrait = window.innerWidth < window.innerHeight;
+  var PleaseRotateOptions = {
+      onlyMobile: false,
+      forcePortrait: !portrait
+  }
+
+</script>
+</head>
+<body>
+<!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader">
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--dot'></div>
+            <div class='loader--text'></div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+<!-- Top navigation bar -->
+    <div id="top-nav">
+        <span onclick="openInstructions()"><img src="{%static 'images/instruct.svg'%}" height="25vh">Instructions</span>
+        <span onclick="displayLeaderboard()"><img src="{%static 'images/leader.svg'%}" height="25vh"></img>Leaderboard</span>
+        <span>
+	    <!-- User Information -->
+            <span><img src="{%static 'images/score.svg'%}" height="25vh"><a id="score">{{score}}</a></span>
+            <span><img src="{%static 'images/user.svg'%}" height="25vh"><a id="username">{{user}}</a></span>
+        </span>
+	<span onclick="window.location='logout/'"><img src="{%static 'images/logout.svg'%}" height="25vh">Logout</span>
+<!-- Player eve -->
+    </div>
+    <div id="progress-bar" class="animate-progress">
+        <span id="progressDone"><span></span></span>
+    </div>
+    <div id="eve"></div>
+
+<!-- Horizon/ Third Layer-->
+    <div class="horizon scroll">
+        <img src="{% static 'images/horizon.png'%}" alt="" />
+    </div>
+<!-- Second Layer-->
+    <div class="second scroll">
+        <img src="{% static 'images/second.png'%}" alt="" />
+    </div>
+<!-- Front Layer-->
+    <div class="front scroll">
+        <img src="{% static 'images/front.png'%}" alt="" />
+
+<!-- Stadium one, popup question availability -->
+        <div class="quesAvailableDiv wow zoomInDown stad1 popup" id="Available1" data-wow-duration="0.5s">
+            <span class="questionAvailable">Football Quiz <br/> Questions are available</span><br/>
+            <span class="play" onclick="displayQuiz(0)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(0)">Leave</span> -->
+        </div>
+        <div class="quesNotAvailableDiv wow zoomInDown stad1 popup" id="NotAvailable1" data-wow-duration="0.5s">
+            <span class="questionNotAvailable">Football Quiz <br/>Questions are not available</span><br/>
+            <span class="leave" onclick="dismissPopUp(0)">Leave</span>
+        </div>
+
+<!-- stadium two, popup question availability-->
+        <div class="quesAvailableDiv wow zoomInDown stad2 popup" id="Available2" data-wow-duration="0.5s">
+            <span class="questionAvailable">Cricket Quiz <br/>Questions are available</span><br/>
+            <span class="play" onclick="displayQuiz(1)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(1)">Leave</span> -->
+        </div>
+        <div class="quesNotAvailableDiv wow zoomInDown stad2 popup" id="NotAvailable2" data-wow-duration="0.5s">
+            <span class="questionNotAvailable">Cricket Quiz <br/>Questions are not available</span><br/>
+            <span class="leave" onclick="dismissPopUp(1)">Leave</span>
+        </div>
+
+<!-- stadium three, popup question availability-->
+        <div class="quesAvailableDiv wow zoomInDown stad3 popup" id="Available3" data-wow-duration="0.5s">
+            <span class="questionAvailable">Miscellaneous Quiz <br/>Questions are available</span><br/>
+            <span class="play" onclick="displayQuiz(2)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(2)">Leave</span> -->
+        </div>
+        <div class="quesNotAvailableDiv wow zoomInDown stad3 popup" id="NotAvailable3" data-wow-duration="0.5s">
+            <span class="questionNotAvailable">Miscellaneous Quiz <br/>Questions are not available</span><br/>
+            <span class="leave" onclick="dismissPopUp(2)">Leave</span>
+        </div>
+
+<!-- stadium four, popup question availability-->
+        <div class="quesAvailableDiv wow zoomInDown stad4 popup" id="Available4" data-wow-duration="0.5s">
+            <span class="questionAvailable">Track & Field Quiz <br/>Questions are available</span><br/>
+            <span class="play" onclick="displayQuiz(3)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(3)">Leave</span> -->
+        </div>
+        <div class="quesNotAvailableDiv wow zoomInDown stad4 popup" id="NotAvailable4" data-wow-duration="0.5s">
+            <span class="questionNotAvailable">Track & Field Quiz <br/>Questions are not available</span><br/>
+            <span class="leave" onclick="dismissPopUp(3)">Leave</span>
+        </div>
+
+<!-- stadium five, popup question availability-->
+        <div class="quesAvailableDiv wow zoomInDown stad5 popup" id="Available5" data-wow-duration="0.5s">
+            <span class="questionAvailable">Extras Quiz <br/>Questions are available</span><br/>
+            <span class="play" onclick="displayQuiz(4)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(4)">Leave</span> -->
+        </div>
+        <div class="quesNotAvailableDiv wow zoomInDown stad5 popup" id="NotAvailable5" data-wow-duration="0.5s">
+            <span class="questionNotAvailable">Extras Quiz <br/>Questions are not available</span><br/>
+            <span class="leave" onclick="dismissPopUp(4)">Leave</span>
+        </div>
+    </div>
+
+<!-- First Quiz -->
+        <div class="quiz-sim-Div-1 wow jackInTheBox" id="Quiz1">
+            <div class="quiz-sim-Title-1">Football Quiz</div>
+            <div class="quiz-sim-Body-1">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(1)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(1)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-1"><span onclick="dismissDiv(1)" id="button">LEAVE STADIUM</span></div>
+        </div>
+
+<!-- Second Quiz -->
+        <div class="quiz-sim-Div-2 wow jackInTheBox" id="Quiz2">
+            <div class="quiz-sim-Title-2">Cricket Quiz</div>
+            <div class="quiz-sim-Body-2">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(2)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(2)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-2"><span onclick="dismissDiv(2)" id="button">LEAVE STADIUM</span></div>
+        </div>
+
+<!-- Third Quiz -->
+        <div class="quiz-sim-Div-3 wow jackInTheBox" id="Quiz3">
+            <div class="quiz-sim-Title-3">Miscellaneaous Quiz</div>
+            <div class="quiz-sim-Body-3">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(3)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(3)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-3"><span onclick="dismissDiv(3)" id="button">LEAVE STADIUM</span></div>
+        </div>
+
+ <div class="quiz-sim-Div-3 wow jackInTheBox" id="Quiz3">
+            <div class="quiz-sim-Title-3">Track & Field Quiz</div>
+            <div class="quiz-sim-Body-3">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(4)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(4)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-3"><span onclick="dismissDiv(3)" id="button">LEAVE STADIUM</span></div>
+        </div>
+<!-- Fourth Quiz -->
+        <div class="quiz-sim-Div-4 wow jackInTheBox" id="Quiz4">
+            <div class="quiz-sim-Title-4">Track & Field Quiz</div>
+            <div class="quiz-sim-Body-4">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{% static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(4)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(4)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-4"><span onclick="dismissDiv(4)" id="button">LEAVE STADIUM</span></div>
+        </div>
+
+<!-- Fifth Quiz -->
+        <div class="quiz-sim-Div-5 wow jackInTheBox" id="Quiz5">
+            <div class="quiz-sim-Title-5">Extras Quiz</div>
+            <div class="quiz-sim-Body-5">
+                <span class="requestStatus"></span>
+                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
+                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
+                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
+                <div class="submitDiv">
+                    <span id="button" class="submitBtn" onclick="submitSol(5)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(5)">SKIP ></span>
+                </div>
+                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
+            </div>
+            <div class="quiz-sim-Footer-5"><span onclick="dismissDiv(5)" id="button">LEAVE STADIUM</span></div>
+        </div>
+
+<!-- Instructons -->
+        <div class="ins-sim-Div wow slideInDown" id="instructionsDiv">
+            <div class="ins-sim-Title"><img src="images/instruct.svg" height="25vh">Instructions</div>
+            <div class="ins-sim-Body" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; justify-content: space-around; ">
+				<span>1. Swipe Up/Down or use Up/Down Arrow keys to roam around the city of "Sportsville".</span>
+				<span>2. Reach near the arrow close to unique stadiums and answer pic-connect type questions to gain maximum points and make it to the leaderboard.</span>
+				<span>3. You can skip at most 3 questions and have liberty to leave a stadium to reach other.</span>
+				<span>4. Correct Answer: 100 points. Skipping Question: -25 points. Leaving Stadium: -50 points.</span>
+            </div>
+            <div class="ins-sim-Footer"><span onclick="dismissDiv()" id="button">CLOSE</span></div>
+        </div>
+
+<!-- Leaderboard -->
+       <div class="lead-sim-Div wow slideInDown" id="leaderboardDiv">
+            <div class="lead-sim-Title"><img src="{% static 'images/leader.svg'%}" height="25vh"></img>Leaderboard</div>
+            <div class="lead-sim-Body" id="leaderboard-body">
+                <div id="your-position">
+                    <span id="position-text">Your Position</span><!--
+                    --><span id="position">{{rank}}</span>
+                </div>
+                <div class="leaderboard-wrapper"><span class="rank">1</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">2</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">3</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">4</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">5</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">6</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">7</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">8</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">9</span><span class="name">Random</span><span class="score">100</span></div>
+                <div class="leaderboard-wrapper"><span class="rank">10</span><span class="name">Random</span><span class="score">100</span></div>
+            </div>
+            <div class="lead-sim-Footer"><span onclick="dismissDiv(0)" id="button">CLOSE</span></div>
+        </div>
+
+<!-- scripts -->
+    <script type="text/javascript" src="{% static 'js/jquery.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.jInvertScroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js'%}"></script>
+</body>
+
+<!-- Eve's movement -->
+	<script type="text/javascript">
+        var eve = $('#eve'),
+            pLocs = [0, -184, -368, -552, -736, -920, -1104, -1288],
+            currFrm = 0,
+            lastStep = 0;
+
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            if (scroll > lastStep + 10) {
+                eve.css('background-image',' url("../static/images/spritesheet.png")');
+                if (currFrm>=7) {
+                    currFrm = -1;
+                }
+                eve.css('background-position', pLocs[++currFrm] + 'px 0px');
+                lastStep = scroll;
+            } else if (scroll < lastStep - 10) {
+                eve.css('background-image',' url("../static/images/image.png")');
+                if (currFrm<=0) {
+                    currFrm = 8;
+                }
+                eve.css('background-position', pLocs[--currFrm] + 'px 0px');
+                lastStep = scroll;
+            }
+        });
+    </script>
+</html>

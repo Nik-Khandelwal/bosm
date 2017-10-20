@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Codingclub/.idea/Codingclub.iml" filepath="$PROJECT_DIR$/../Codingclub/.idea/Codingclub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/bosm.iml" filepath="$PROJECT_DIR$/.idea/bosm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sportzilla2-20170915T173829Z-001/.idea/sportzilla2-20170915T173829Z-001.iml" filepath="$PROJECT_DIR$/../sportzilla2-20170915T173829Z-001/.idea/sportzilla2-20170915T173829Z-001.iml" />
+    </modules>
+  </component>
+</project>
