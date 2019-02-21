@@ -25,7 +25,7 @@ SECRET_KEY = 'sxqps21_7z12+l()o%c$pmi@gunu@3pqivn-7c7o7sv5#rhe^m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sportzilla.pythonanywhere.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['sportzilla.pythonanywhere.com', '127.0.0.1', 'localhost',]
 
 
 # Application definition
@@ -62,8 +62,7 @@ ROOT_URLCONF = 'bosm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,8 +78,6 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
-
-
     'allauth.account.auth_backends.AuthenticationBackend',
 
 )
@@ -140,7 +137,7 @@ SITE_ID = 2
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ACCOUNT_EMAIL_VERIFICATION = "none"
-SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_QUERY_EMAIL = False
 LOGIN_REDIRECT_URL = "/"
 AUTH_USER_MODEL = 'sportzilla.CustomUser'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
