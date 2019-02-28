@@ -25,7 +25,7 @@ SECRET_KEY = 'sxqps21_7z12+l()o%c$pmi@gunu@3pqivn-7c7o7sv5#rhe^m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sportzilla.pythonanywhere.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['sportzilla.pythonanywhere.com', '127.0.0.1', 'localhost',]
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -62,8 +62,7 @@ ROOT_URLCONF = 'bosm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,10 +76,10 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
-
-
     'allauth.account.auth_backends.AuthenticationBackend',
 
 )
@@ -140,8 +139,14 @@ SITE_ID = 2
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ACCOUNT_EMAIL_VERIFICATION = "none"
-SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_QUERY_EMAIL = False
 LOGIN_REDIRECT_URL = "/"
 AUTH_USER_MODEL = 'sportzilla.CustomUser'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'main'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='1060438488864-oqbnppt4fbd4ml7fu6d6l6u51m14k60f.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qFZH7K_i_8C2xaqsLwsDXi_1'

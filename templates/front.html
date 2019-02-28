@@ -6,7 +6,7 @@
 		<title>SPORTZILLA| </title>
         {% load staticfiles %}
 		<link rel="stylesheet" href="{% static 'main/style/front-style.css' %}">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="{% static 'main/js/tilt.js' %}"></script>
 		<link rel="stylesheet" href="{% static 'main/style/animate.css' %}">
@@ -22,32 +22,34 @@
 			<article class="art">
 				<h1 class="wow bounceInDown upper animated ">
 				<big><b>BOSM</b></big>
-				</h1>	
-					
-				<h3 class="wow bounceInUp lower animated ">	
+				</h1>
+
+				<h3 class="wow bounceInUp lower animated ">
 				<b>2017</b>
 				</h3>
 			</article>
-			
-			<br/><br/>				
+
+			<br/><br/>
 		</section>
 			<img src="{% static '/media/img/audience.png'%}" class="wow bounceInUp animated aud">
 			</img>
 			<img src="{% static '/media/img/stadstad.jpg'%}" class="wow  animated fadeIn stad">
 			</img>
-			
-		
+
+
 
 		<section id="two">
 			<a href="#one" class="arrow-up"></a>
 			<img data-tilt src="{% static '/media/img/Layer-a.svg'%}" class=" imgout"></img>
 
 			<img data-tilt src="{% static '/media/img/Layer-b.svg'%}" class=" wow  animated fadeIn imgin"></img>
-			
+
 		</section>
-		<article id="text" >	
+		<article id="text" >
 				<h1 class="wow fadeIn animated " > <big><b> SPORTZILLA </b></big></h1>
-				<a href="accounts/google/login/?process=login" class="wow fadeIn animated button" style="z-index: 500;"> <h3> LOGIN </h3></a>
+				<!-- <a href="accounts/google/login/?process=login" class="wow fadeIn animated button" style="z-index: 500;"> <h3> LOGIN </h3></a> -->
+				<!-- {% url 'social:begin' 'google-oauth2' %} -->
+				<a href="{% url 'social:begin' 'google-oauth2' %}" class="wow fadeIn animated button" style="z-index: 500;"> <h3> LOGIN </h3></a>
 		</article>
 		<article id="loader">
 			<div class="load"></div>
