@@ -4,14 +4,14 @@
 	<meta charset="utf-8" />
 	<title>Sportzilla</title>
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}">
-    <script type="text/javascript" src="{% static 'js/wow.min.js'%}"></script>
+    <link rel="stylesheet" href='../static/css/style.css' />
+    <link rel="stylesheet" type="text/css" href='../static/css/animate.css'>
+    <script type="text/javascript" src='../static/js/wow.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script type="text/javascript">
         new WOW().init();
     </script>
-    <script src="{% static 'js/pleaserotate.min.js'%}"></script>
+    <script src='../static/js/pleaserotate.min.js'></script>
     <script type="text/javascript">
         $(window).on("load", function() {
             $('body').addClass('loaded');
@@ -25,6 +25,7 @@
   }
 
 </script>
+<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
 </head>
 <body>
 <!-- Loader -->
@@ -43,14 +44,14 @@
     </div>
 <!-- Top navigation bar -->
     <div id="top-nav">
-        <span onclick="openInstructions()"><img src="{%static 'images/instruct.svg'%}" height="25vh">Instructions</span>
-        <span onclick="displayLeaderboard()"><img src="{%static 'images/leader.svg'%}" height="25vh"></img>Leaderboard</span>
+        <span onclick="openInstructions()"><img src='../static/images/instruct.svg' height="25vh">Instructions</span>
+        <span onclick="displayLeaderboard()"><img src='../static/images/leader.svg' height="25vh"></img>Leaderboard</span>
         <span>
 	    <!-- User Information -->
-            <span><img src="{%static 'images/score.svg'%}" height="25vh"><a id="score">{{score}}</a></span>
-            <span><img src="{%static 'images/user.svg'%}" height="25vh"><a id="username">{{user}}</a></span>
+            <span><img src='../static/images/score.svg' height="25vh"><a id="score">{{score}}</a></span>
+            <span><img src='../static/images/user.svg' height="25vh"><a id="username">{{user}}</a></span>
         </span>
-	<span onclick="window.location='logout/'"><img src="{%static 'images/logout.svg'%}" height="25vh">Logout</span>
+	<span onclick="window.location='logout/'"><img src='../static/images/logout.svg' height="25vh">Logout</span>
 <!-- Player eve -->
     </div>
     <div id="progress-bar" class="animate-progress">
@@ -60,15 +61,15 @@
 
 <!-- Horizon/ Third Layer-->
     <div class="horizon scroll">
-        <img src="{% static 'images/horizon.png'%}" alt="" />
+        <img id="backImg" src="../static/images/FullBackg.png" alt="" />
     </div>
 <!-- Second Layer-->
-    <div class="second scroll">
-        <img src="{% static 'images/second.png'%}" alt="" />
-    </div>
+    <!--<div class="second scroll">
+        <img src='../static/images/second.png' alt="" />
+    </div>-->
 <!-- Front Layer-->
     <div class="front scroll">
-        <img src="{% static 'images/front.png'%}" alt="" />
+        <img id="road" src="../static/images/FullFront.png" alt="" />
 
 <!-- Stadium one, popup question availability -->
         <div class="quesAvailableDiv wow zoomInDown stad1 popup" id="Available1" data-wow-duration="0.5s">
@@ -132,7 +133,7 @@
             <div class="quiz-sim-Body-1">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -149,7 +150,7 @@
             <div class="quiz-sim-Body-2">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -166,7 +167,7 @@
             <div class="quiz-sim-Body-3">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -182,7 +183,7 @@
             <div class="quiz-sim-Body-3">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -198,7 +199,7 @@
             <div class="quiz-sim-Body-4">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{% static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -215,7 +216,7 @@
             <div class="quiz-sim-Body-5">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="{%static 'images/1.jpg'%}" class="questionImg" alt="Loading..."><br>
+                <img src='../static/images/1.jpg' class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
@@ -228,9 +229,9 @@
 
 <!-- Instructons -->
         <div class="ins-sim-Div wow slideInDown" id="instructionsDiv">
-            <div class="ins-sim-Title"><img src="images/instruct.svg" height="25vh">Instructions</div>
+            <div class="ins-sim-Title"><img src="../static/images/instruct.svg" height="25vh">&nbsp;<b>Instructions</b></div>
             <div class="ins-sim-Body" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; justify-content: space-around; ">
-				<span>1. Swipe Up/Down or use Up/Down Arrow keys to roam around the city of "Sportsville".</span>
+				<span>1. Swipe Up/Down or use Up/Down Arrow keys to roam around the map.</span>
 				<span>2. Reach near the arrow close to unique stadiums and answer pic-connect type questions to gain maximum points and make it to the leaderboard.</span>
 				<span>3. You can skip at most 3 questions and have liberty to leave a stadium to reach other.</span>
 				<span>4. Correct Answer: 100 points. Skipping Question: -25 points. Leaving Stadium: -50 points.</span>
@@ -240,7 +241,7 @@
 
 <!-- Leaderboard -->
        <div class="lead-sim-Div wow slideInDown" id="leaderboardDiv">
-            <div class="lead-sim-Title"><img src="{% static 'images/leader.svg'%}" height="25vh"></img>Leaderboard</div>
+            <div class="lead-sim-Title"><img src='../static/images/leader.svg' height="25vh"></img>Leaderboard</div>
             <div class="lead-sim-Body" id="leaderboard-body">
                 <div id="your-position">
                     <span id="position-text">Your Position</span><!--
@@ -261,9 +262,9 @@
         </div>
 
 <!-- scripts -->
-    <script type="text/javascript" src="{% static 'js/jquery.min.js'%}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.jInvertScroll.js'%}"></script>
-    <script type="text/javascript" src="{% static 'js/script.js'%}"></script>
+    <script type="text/javascript" src='../static/js/jquery.min.js'></script>
+    <script type="text/javascript" src='../static/js/jquery.jInvertScroll.js'></script>
+    <script type="text/javascript" src='../static/js/script.js'></script>
 </body>
 
 <!-- Eve's movement -->
