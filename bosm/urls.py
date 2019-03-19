@@ -8,7 +8,6 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^$', main, name='main'),
     url(r'^admin/', admin.site.urls),
-    #url(r'^accounts/', include('allauth.urls')),
     url(r'^accounts/', include('social_django.urls')),
     url(r'^accounts/profile/', include('sportzilla.urls')),
     url(r'^logout/$', views.logout, name='logout'),
