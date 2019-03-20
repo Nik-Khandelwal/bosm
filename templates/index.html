@@ -53,7 +53,7 @@
             <span><img src="../static/images/score.svg" height="25vh"><a id="score">{{score}}</a></span>
             <span><img src="../static/images/user.svg" height="25vh"><a id="username">{{user}}</a></span>
         </span>
-	<span onclick="window.location='logout/'"><img src="images/logout.svg" height="25vh">Logout</span>
+	<span onclick="window.location='logout/'"><img src="../static/images/logout.svg" height="25vh">Logout</span>
 <!-- Player eve -->
     </div>
     <div id="progress-bar" class="animate-progress">
@@ -81,47 +81,47 @@
         </div>
 
 <!-- stadium two, popup question availability-->
-        <div class="quesAvailableDiv wow zoomInDown stad2 popup" id="Available2" data-wow-duration="0.5s">
+        <!-- <div class="quesAvailableDiv wow zoomInDown stad2 popup" id="Available2" style="display:none" data-wow-duration="0.5s">
             <span class="questionAvailable">Cricket Quiz <br/>Questions are available</span><br/>
-            <span class="play" onclick="displayQuiz(1)">Play</span>
+            <span class="play" onclick="displayQuiz(1)">Play</span> -->
             <!-- <span class="leave" onclick="dismissPopUp(1)">Leave</span> -->
-        </div>
+        <!-- </div>
         <div class="quesNotAvailableDiv wow zoomInDown stad2 popup" id="NotAvailable2" data-wow-duration="0.5s">
             <span class="questionNotAvailable">Cricket Quiz <br/>Questions are not available</span><br/>
             <span class="leave" onclick="dismissPopUp(1)">Leave</span>
-        </div>
+        </div> -->
 
 <!-- stadium three, popup question availability-->
-        <div class="quesAvailableDiv wow zoomInDown stad3 popup" id="Available3" data-wow-duration="0.5s">
+        <div class="quesAvailableDiv wow zoomInDown stad2 popup" id="Available2" data-wow-duration="0.5s">
             <span class="questionAvailable">Miscellaneous Quiz <br/>Questions are available</span><br/>
-            <span class="play" onclick="displayQuiz(2)">Play</span>
-            <!-- <span class="leave" onclick="dismissPopUp(2)">Leave</span> -->
+            <span class="play" onclick="displayQuiz(1)">Play</span>
+            <!-- <span class="leave" onclick="dismissPopUp(2)">Leave</span>-->
         </div>
-        <div class="quesNotAvailableDiv wow zoomInDown stad3 popup" id="NotAvailable3" data-wow-duration="0.5s">
+        <div class="quesNotAvailableDiv wow zoomInDown stad2 popup" id="NotAvailable2" data-wow-duration="0.5s">
             <span class="questionNotAvailable">Miscellaneous Quiz <br/>Questions are not available</span><br/>
-            <span class="leave" onclick="dismissPopUp(2)">Leave</span>
+            <span class="leave" onclick="dismissPopUp(1)">Leave</span>
         </div>
 
 <!-- stadium four, popup question availability-->
-        <div class="quesAvailableDiv wow zoomInDown stad4 popup" id="Available4" data-wow-duration="0.5s">
+        <!-- <div class="quesAvailableDiv wow zoomInDown stad4 popup" id="Available4" data-wow-duration="0.5s">
             <span class="questionAvailable">Track & Field Quiz <br/>Questions are available</span><br/>
-            <span class="play" onclick="displayQuiz(3)">Play</span>
+            <span class="play" onclick="displayQuiz(3)">Play</span> -->
             <!-- <span class="leave" onclick="dismissPopUp(3)">Leave</span> -->
-        </div>
+        <!-- </div>
         <div class="quesNotAvailableDiv wow zoomInDown stad4 popup" id="NotAvailable4" data-wow-duration="0.5s">
             <span class="questionNotAvailable">Track & Field Quiz <br/>Questions are not available</span><br/>
             <span class="leave" onclick="dismissPopUp(3)">Leave</span>
-        </div>
+        </div> -->
 
 <!-- stadium five, popup question availability-->
-        <div class="quesAvailableDiv wow zoomInDown stad5 popup" id="Available5" data-wow-duration="0.5s">
+        <div class="quesAvailableDiv wow zoomInDown stad3 popup" id="Available3" data-wow-duration="0.5s">
             <span class="questionAvailable">Extras Quiz <br/>Questions are available</span><br/>
-            <span class="play" onclick="displayQuiz(4)">Play</span>
+            <span class="play" onclick="displayQuiz(2)">Play</span>
             <!-- <span class="leave" onclick="dismissPopUp(4)">Leave</span> -->
         </div>
-        <div class="quesNotAvailableDiv wow zoomInDown stad5 popup" id="NotAvailable5" data-wow-duration="0.5s">
+        <div class="quesNotAvailableDiv wow zoomInDown stad3 popup" id="NotAvailable3" data-wow-duration="0.5s">
             <span class="questionNotAvailable">Extras Quiz <br/>Questions are not available</span><br/>
-            <span class="leave" onclick="dismissPopUp(4)">Leave</span>
+            <span class="leave" onclick="dismissPopUp(2)">Leave</span>
         </div>
     </div>
 
@@ -143,7 +143,7 @@
         </div>
 
 <!-- Second Quiz -->
-        <div class="quiz-sim-Div-2 wow jackInTheBox" id="Quiz2">
+        <!-- <div class="quiz-sim-Div-2 wow jackInTheBox" id="Quiz2">
             <div class="quiz-sim-Title-2">Cricket Quiz</div>
             <div class="quiz-sim-Body-2">
                 <span class="requestStatus"></span>
@@ -157,42 +157,27 @@
                 <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
             </div>
             <div class="quiz-sim-Footer-2"><span onclick="dismissDiv(2)" id="button">LEAVE STADIUM</span></div>
-        </div>
+        </div> -->
 
 <!-- Third Quiz -->
-        <div class="quiz-sim-Div-3 wow jackInTheBox" id="Quiz3">
-            <div class="quiz-sim-Title-3">Miscellaneaous Quiz</div>
-            <div class="quiz-sim-Body-3">
+        <div class="quiz-sim-Div-2 wow jackInTheBox" id="Quiz2">
+            <div class="quiz-sim-Title-2">Miscellaneaous Quiz</div>
+            <div class="quiz-sim-Body-2">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
                 <img src="../static/images/1.jpg" class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
-                    <span id="button" class="submitBtn" onclick="submitSol(3)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(3)">SKIP ></span>
+                    <span id="button" class="submitBtn" onclick="submitSol(2)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(3)">SKIP ></span>
                 </div>
                 <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
             </div>
-            <div class="quiz-sim-Footer-3"><span onclick="dismissDiv(3)" id="button">LEAVE STADIUM</span></div>
+            <div class="quiz-sim-Footer-2"><span onclick="dismissDiv(2)" id="button">LEAVE STADIUM</span></div>
         </div>
 
- <div class="quiz-sim-Div-3 wow jackInTheBox" id="Quiz3">
-            <div class="quiz-sim-Title-3">Track & Field Quiz</div>
-            <div class="quiz-sim-Body-3">
-                <span class="requestStatus"></span>
-                <span class="ques-num">Question <span class="qno">1</span> : </span><br>
-                <img src="../static/images/1.jpg" class="questionImg" alt="Loading..."><br>
-                <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
-                <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
-                <div class="submitDiv">
-                    <span id="button" class="submitBtn" onclick="submitSol(4)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(4)">SKIP ></span>
-                </div>
-                <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
-            </div>
-            <div class="quiz-sim-Footer-3"><span onclick="dismissDiv(3)" id="button">LEAVE STADIUM</span></div>
-        </div>
 <!-- Fourth Quiz -->
-        <div class="quiz-sim-Div-4 wow jackInTheBox" id="Quiz4">
+        <!-- <div class="quiz-sim-Div-4 wow jackInTheBox" id="Quiz4">
             <div class="quiz-sim-Title-4">Track & Field Quiz</div>
             <div class="quiz-sim-Body-4">
                 <span class="requestStatus"></span>
@@ -206,23 +191,23 @@
                 <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
             </div>
             <div class="quiz-sim-Footer-4"><span onclick="dismissDiv(4)" id="button">LEAVE STADIUM</span></div>
-        </div>
+        </div> -->
 
 <!-- Fifth Quiz -->
-        <div class="quiz-sim-Div-5 wow jackInTheBox" id="Quiz5">
-            <div class="quiz-sim-Title-5">Extras Quiz</div>
-            <div class="quiz-sim-Body-5">
+        <div class="quiz-sim-Div-3 wow jackInTheBox" id="Quiz3">
+            <div class="quiz-sim-Title-3">Extras Quiz</div>
+            <div class="quiz-sim-Body-3">
                 <span class="requestStatus"></span>
                 <span class="ques-num">Question <span class="qno">1</span> : </span><br>
                 <img src="../static/images/1.jpg" class="questionImg" alt="Loading..."><br>
                 <span class="hint-text">Hint : <span class="hintText">Hint text here..</span></span><br>
                 <input type="text" name="answer" placeholder="Enter your Answer Here" class="answer-field"><br>
                 <div class="submitDiv">
-                    <span id="button" class="submitBtn" onclick="submitSol(5)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(5)">SKIP ></span>
+                    <span id="button" class="submitBtn" onclick="submitSol(3)">SUBMIT</span><span id="button" class="skipBtn" onclick="skipQues(5)">SKIP ></span>
                 </div>
                 <div class="skips-left">Skips Left : <span class="skipsLeft">{{skip}}</span></div>
             </div>
-            <div class="quiz-sim-Footer-5"><span onclick="dismissDiv(5)" id="button">LEAVE STADIUM</span></div>
+            <div class="quiz-sim-Footer-3"><span onclick="dismissDiv(3)" id="button">LEAVE STADIUM</span></div>
         </div>
 
 <!-- Instructons -->
