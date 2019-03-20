@@ -1,0 +1,74 @@
+@font-face
+{
+    font-family: "Font";
+    src: url('../font/Sketch 3D.otf');
+}
+
+
+body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; }
+canvas{ display: block; vertical-align: bottom; opacity: 1}
+#particles-js{ position:absolute; width: 100%; height: 100%; background-color: #b61924; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+.count-particles{ background: #000; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; opacity: 0}
+.js-count-particles{ font-size: 1.1em; }
+#stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; }
+#stats{ border-radius: 3px 3px 0 0; overflow: hidden; }
+.count-particles{ border-radius: 0 0 3px 3px; }
+.particles-js-canvas-el{ background: #000; }
+.butn
+{
+    width: auto;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.logoApogee
+{
+    position: absolute;
+    top: 4vh;
+    left: 85vw;
+    width: 10vw;
+    z-index: 100000;
+    animation: fadeIn 3s linear;
+}
+
+.logocc
+{
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+    width: 20vw;
+    z-index: 100000;
+    animation: fadeIn 3s linear;
+}
+
+#title
+{
+    position: absolute;
+    width: 100vw;
+    top: 30%;
+    text-align: center;
+    font-size: 140px;
+    color: white;
+    background: transparent;
+    font-family: Font;
+    text-shadow: -2px -2px 5px grey;
+    animation: fadeIn 2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
