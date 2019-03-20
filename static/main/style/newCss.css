@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: "Font";
-    src: url('Sketch 3D.otf');
+    src: url('../font/Sketch 3D.otf');
 }
 
 
@@ -27,6 +27,7 @@ canvas{ display: block; vertical-align: bottom; opacity: 1}
     color: white;
     font-size: 25px;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .logoApogee
@@ -55,7 +56,7 @@ canvas{ display: block; vertical-align: bottom; opacity: 1}
     width: 100vw;
     top: 30%;
     text-align: center;
-    font-size: 100px;
+    font-size: 140px;
     color: white;
     background: transparent;
     font-family: Font;
